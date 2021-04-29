@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import store from './redux/store/store';
+import VerifyAccountNumber from './Screens/Paystack/VerifyAccountNumber';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <ToastContainer autoClose={4000} />
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
